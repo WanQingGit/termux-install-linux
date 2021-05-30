@@ -1,6 +1,6 @@
-import os
 import base64
-import argparse
+import os
+
 
 def logo():
     print("""  _____                              
@@ -36,7 +36,8 @@ def install_ubuntu():
     print('\n下载完成 看来国内码云的速度还是可以的 2333')
     print('\n正在解压镜像 请耐心等待')
     os.system(f'mkdir -p $HOME/Termux-Linux/{osname}/{folder}')
-    os.system(f'proot --link2symlink tar -xf {imagedir}/{tarball} -C $HOME/Termux-Linux/{osname}/{folder} --exclude="dev"||:')
+    os.system(
+        f'proot --link2symlink tar -xf {imagedir}/{tarball} -C $HOME/Termux-Linux/{osname}/{folder} --exclude="dev"||:')
     print('\n解压完成 正在删除已下载的镜像')
     os.system(f'rm -rf {imagedir}')
     print('\n正在优化系统设置')
@@ -50,10 +51,12 @@ def install_ubuntu():
     print('\n   Ubuntu 安装成功')
     print('\n    祝您使用愉快\n')
 
+
 def uninstall_ubuntu():
     print('\n正在卸载 Ubuntu 请耐心等待')
     os.system('rm -rf $HOME/Termux-Linux/Ubuntu')
     print('\n卸载完成!')
+
 
 def install_kali():
     osname = 'Kali'
@@ -63,7 +66,7 @@ def install_kali():
     tarball = "kali-rootfs-arm64.tar.xz"
     print("\n正在从码云下载 Rootfs 镜像文件，请耐心等待")
     os.system('git clone "https://gitee.com/sqlsec/termux-kali"')
-    print('\n下载完成 看来国内码云的速度还是可以的 2333')
+    print('\n下载完成 ')
     print('\n正在解压镜像 请耐心等待')
     os.system(f'mkdir -p $HOME/Termux-Linux/{osname}/{folder}')
     os.system(f'proot --link2symlink tar -xJf {imagedir}/{tarball} -C $HOME/Termux-Linux/{osname}/{folder} ||:')
@@ -80,10 +83,12 @@ def install_kali():
     print('\n   Kali 安装成功')
     print('\n    祝您使用愉快\n')
 
+
 def uninstall_kali():
     print('\n正在卸载 Kali 请耐心等待')
     os.system('rm -rf $HOME/Termux-Linux/Kali')
     print('\n卸载完成!')
+
 
 def install_debian():
     osname = 'Debian'
@@ -93,7 +98,7 @@ def install_debian():
     tarball = "debian-rootfs-arm64.tar.xz"
     print("\n正在从码云下载 Rootfs 镜像文件，请耐心等待")
     os.system('git clone "https://gitee.com/sqlsec/termux-debian"')
-    print('\n下载完成 看来国内码云的速度还是可以的 2333')
+    print('\n下载完成 ')
     print('\n正在解压镜像 请耐心等待')
     os.system(f'mkdir -p $HOME/Termux-Linux/{osname}/{folder}')
     os.system(f'proot --link2symlink tar -xJf {imagedir}/{tarball} -C $HOME/Termux-Linux/{osname}/{folder} ||:')
@@ -110,10 +115,12 @@ def install_debian():
     print('\n   Debian 安装成功')
     print('\n     祝您使用愉快\n')
 
+
 def uninstall_debian():
     print('\n正在卸载 Debian 请耐心等待')
     os.system('rm -rf $HOME/Termux-Linux/Debian')
     print('\n卸载完成!')
+
 
 def install_centos():
     osname = 'CentOS'
@@ -123,10 +130,11 @@ def install_centos():
     tarball = "centos-rootfs-arm64.tar.xz"
     print("\n正在从码云下载 Rootfs 镜像文件，请耐心等待")
     os.system('git clone "https://gitee.com/sqlsec/termux-centos"')
-    print('\n下载完成 看来国内码云的速度还是可以的 2333')
+    print('\n下载完成 ')
     print('\n正在解压镜像 请耐心等待')
     os.system(f'mkdir -p $HOME/Termux-Linux/{osname}/{folder}')
-    os.system(f'proot --link2symlink tar -xJf {imagedir}/{tarball} -C $HOME/Termux-Linux/{osname}/{folder} --exclude="dev"||:')
+    os.system(
+        f'proot --link2symlink tar -xJf {imagedir}/{tarball} -C $HOME/Termux-Linux/{osname}/{folder} --exclude="dev"||:')
     print('\n解压完成 正在删除已下载的镜像')
     os.system(f'rm -rf {imagedir}')
     print('\n正在优化系统设置')
@@ -142,11 +150,13 @@ def install_centos():
     print('\n   CentOS 安装成功')
     print('\n    祝您使用愉快\n')
 
+
 def uninstall_centos():
     print('\n正在卸载 CentOS 请耐心等待')
     os.system('chmod 777 -R $HOME/Termux-Linux/CentOS')
     os.system('rm -rf $HOME/Termux-Linux/CentOS')
     print('\n卸载完成!')
+
 
 def install_fedora():
     osname = 'Fedora'
@@ -156,10 +166,11 @@ def install_fedora():
     tarball = "fedora-rootfs-arm64.tar.xz"
     print("\n正在从码云下载 Rootfs 镜像文件，请耐心等待")
     os.system('git clone "https://gitee.com/sqlsec/termux-fedora"')
-    print('\n下载完成 看来国内码云的速度还是可以的 2333')
+    print('\n下载完成 ')
     print('\n正在解压镜像 请耐心等待')
     os.system(f'mkdir -p $HOME/Termux-Linux/{osname}/{folder}')
-    os.system(f'proot --link2symlink tar -xJf {imagedir}/{tarball} -C $HOME/Termux-Linux/{osname}/{folder} --exclude "dev" ||:')
+    os.system(
+        f'proot --link2symlink tar -xJf {imagedir}/{tarball} -C $HOME/Termux-Linux/{osname}/{folder} --exclude "dev" ||:')
     print('\n解压完成 正在删除已下载的镜像')
     os.system(f'rm -rf {imagedir}')
     print('\n正在优化系统设置')
@@ -183,6 +194,7 @@ def uninstall_fedora():
     os.system('rm -rf $HOME/Termux-Linux/Fedora')
     print('\n卸载完成!')
 
+
 if __name__ == "__main__":
     # 如果没有安装 screenfetch 就安装
     result = os.popen('pkg list-installed|grep screenfetch')
@@ -193,14 +205,14 @@ if __name__ == "__main__":
     copyright = logo()
     if copyright[0][10:13] != '11e' or copyright[1][10:13] != '93d':
         print('校验失败 退出脚本')
-        os._exit(0)
+        exit(0)
 
     file_exits = False
     result = os.popen('ls $HOME')
     for line in result.read().splitlines():
         if line == 'Termux-Linux':
             file_exits = True
-    
+
     linux_dir = []
     if file_exits:
         result = os.popen('ls $HOME/Termux-Linux/')
